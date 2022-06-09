@@ -1,0 +1,74 @@
+body {
+    background-color: #000000;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: 300;
+    margin: 0;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+header {
+    background: #001055;
+}
+
+header::after { /* (clearfix)clearing the float issues by adding a pseudo element after the content */
+    content: '';
+    display: table;
+    clear: both;
+}
+
+.logo {
+    float: left;
+    padding: 10px 0;
+}
+
+nav {
+    float: right;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    
+}
+
+nav ul li {
+    display: inline-block;
+    text-decoration: none;
+    margin-left: 70px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    position: relative; /**/
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+nav a:hover {
+    color: yellow;
+}
+
+/**/
+nav a::after {
+    content: '';
+    display: block;
+    height: 5px;
+    
+    background-color: yellow;
+    position: absolute;
+    bottom: 0;
+
+    width: 0%; /*start invisible*/
+    transition: all ease-in-out 1000ms;
+}
+
+nav a:hover::after {
+    width: 100%;
+}

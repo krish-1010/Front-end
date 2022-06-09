@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>
+        Array sort using Quick Sort
+    </title>
+    <style>
+        body, h1, header {
+            margin: 0;
+        }
+
+        header {
+            font-family: sans-serif;
+            font-size: 14px;
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            border: 1px solid black;
+        }
+
+        .container {
+            width: 50%;
+            margin: 0 auto;
+        }
+
+        .box {
+            width: 370px;
+            margin: 0 auto;
+            border: 1px solid black;
+        }
+
+        #result, #n {
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+            text-transform: capitalize;
+        }
+
+        #result {
+            margin-top: 10px;
+        }
+
+        .topbox{
+            text-align: center;
+            padding: 15px 0;
+            margin-bottom: 10px;
+            font: 1.5em sans-serif;
+            border: 1px solid black;
+        }
+
+        #n {
+            display: inline-block;
+            vertical-align: top;
+            margin-top: 8px;
+        }
+
+        .text {
+            display: inline-block;
+            width: 150px;
+            margin-left: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1> Sorting Array using quick sort </h1>
+    </header>
+    
+    <div class="container">
+        <div class="box">
+            <div class="topbox">
+                Array Sorter
+            </div>
+            <form class="form" action=" ">
+                <div class="box1">
+                    <div class="text"> Enter numbers with commas as seperators</div>
+                <input type="text" name="array[]" value="" id="n" placeholder="input array with commas" />
+                </div>
+                <input type="text" id="result" placeholder="sorted array"> <br>
+                <center>
+                    <button type="button" style="background-color: white;" name="button" onclick="inputArray()">
+                        Sort
+                    </button>
+                </center>
+            </form>
+        </div>
+    </div>
+    
+
+
+    <script type="text/javascript">
+
+        function inputArray() {
+
+            let StringArray = String(document.getElementById("n").value); //input to string
+
+            let numberArray = StringArray.split(","); //splitting values at commas
+
+            let arr = [];
+
+            let i = 0;
+            let n = numberArray.length;
+            n -= 1;
+            while (i <= n){        //converting string array to numeric array
+                arr.push(Number(numberArray[i]));
+                i++;
+            }
+
+            function quick_Sort(origArray) {
+                if (origArray.length <= 1) {
+                    return origArray;
+                } else {
+
+                    var left = [];
+                    var right = [];
+                    var newArray = [];
+                    var pivot = origArray.pop();
+                    var length = origArray.length;
+
+                    for (var i = 0; i < length; i++) {
+                        if (origArray[i] <= pivot) {
+                            left.push(origArray[i]);
+                        }
+                        else {
+                            right.push(origArray[i]);
+                        }
+                    }
+
+
+                    return newArray.concat(quick_Sort(left), pivot, quick_Sort(right));
+                }
+            }
+
+            let finalArray = quick_Sort(arr);
+
+            document.getElementById("result").value = finalArray;
+        }
+    </script>
+</body>
+
+</html>

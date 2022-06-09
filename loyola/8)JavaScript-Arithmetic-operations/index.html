@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Arithmetic operations</title>
+    
+    <style>
+        body {
+            margin: 0;
+            
+        }
+
+        header {
+            border: 1px solid black ;
+            text-align: center;
+            padding: 10px;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        .boxes {
+            display: flex;
+            width: 100%;
+            margin-right: 0;
+        }
+
+        .box {
+            
+            width: 50%;
+        }
+
+        .box1 {
+            padding-left: 30px;
+        }
+
+        .box2 {
+            padding-left: 30px;
+        }
+
+        .container {
+            width: 750px;
+            margin: 0 auto;
+            border: 1px solid black;
+            border-top: 0;
+        }
+        
+        #result {
+            margin-top: 25px;
+            height: 30px;
+            text-align: center;
+        }
+
+        .buttons {
+            width: 140px;
+            margin: 5px;
+        }
+
+        .bts {
+            margin-top: 10px;
+            margin-left: 0x;
+        }
+
+        .nums {
+            margin-left: 5px;
+        }
+
+        #num2 {
+            margin-left: 5px;
+        }
+
+        .colbox {
+            background-color: black;
+            height: 40px;
+            margin-bottom: 10px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <h1>Arithmetic operations on JavaScript</h1>
+    </header>
+    <div class="container">
+        <div class="colbox"></div>
+        <div class="boxes">
+            <div class="box box1">
+                <form action="#">
+                    <div class="nums">
+                        <input type="text" name="number1" id="num1" placeholder="Enter a number" size="18px">
+                        <input type="text" name="number1" id="num2" placeholder="Enter another number" size="18" style="margin-left: 15px;"><br>
+                    </div>
+                    <div class="bts">
+                        <input class="buttons" type="button" value="Add" onclick="add()">
+                        <input class="buttons" type="button" value="Subtract" onclick="sub()"><br>
+                        <input class="buttons" type="button" value="multiply" onclick="mul()">
+                        <input class="buttons" type="button" value="divide" onclick="divide()"><br>
+                        <input class="buttons" type="button" value="modulus" onclick="mod()">
+                        <input class="buttons" type="button" value="exponent" onclick="exp()">
+                    </div>
+                </form>
+            </div>
+            <div class="box box2">
+                Result <br>
+                <input id="result">
+            </div>
+        </div>
+    </div>
+    <script>
+        let num1, num2;
+
+        let sum, diff, product, div;
+
+        function add() {
+            var num1 = Number(document.getElementById("num1").value);
+            var num2 = Number(document.getElementById("num2").value);
+            sum = num1 + num2;
+            document.getElementById("result").value = sum;
+        }
+
+        function sub() {
+            var num1 = Number(document.getElementById("num1").value);
+            var num2 = Number(document.getElementById("num2").value);
+            diff = num1 - num2;
+            document.getElementById("result").value = diff;
+        }
+
+        function mul() {
+            var num1 = Number(document.getElementById("num1").value);
+            var num2 = Number(document.getElementById("num2").value);
+            product = num1 * num2;
+            document.getElementById("result").value = product;
+        }
+
+        function divide() {
+            var num1 = Number(document.getElementById("num1").value);
+            var num2 = Number(document.getElementById("num2").value);
+            div = num1 / num2;
+            document.getElementById("result").value = div;
+        }
+
+        function mod() {
+            var num1 = Number(document.getElementById("num1").value);
+            var num2 = Number(document.getElementById("num2").value);
+            rem = num1 % num2;
+            document.getElementById("result").value = rem;
+        }
+
+        function exp() {
+            var num1 = Number(document.getElementById("num1").value);
+            var num2 = Number(document.getElementById("num2").value);
+            expo = num1 ** num2;
+            document.getElementById("result").value = expo;
+        }
+
+    </script>
+</body>
+
+</html>

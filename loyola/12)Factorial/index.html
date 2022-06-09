@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+<head>
+  <style>
+    body {
+      font-family: 'Trebuchet MS';
+      font-size: 18px;
+      margin: 0;
+    }
+    h1 {
+      margin: 0;
+    }
+    .box {
+      margin: 0 auto;
+      width: 80%;
+     
+    }
+
+    .box1 {
+      margin: 0 auto;
+      max-width: 175px; 
+      border: 1px solid black;
+    }
+
+    .outerbox {
+      border: 1px solid black;
+      margin: 0 auto;
+      width: 50%;
+      min-width: 200px;
+      max-width: 343px;
+      padding: 20px 0;
+    }
+    
+    header {
+      font-family: sans-serif;
+      font-size: 14;
+      text-transform: uppercase;
+      border: 1px solid black;
+      padding: 15px;
+    }
+  </style>
+  <script>
+    function show() {
+
+      let no, fact;
+
+      no = Number(document.getElementById("num").value);
+
+      function factorial(no) {
+        if (no == 0) {
+          return 1;
+        }
+
+        else if (isNaN(no)) {
+          return "nan";
+        }
+
+        else {
+
+          return no * factorial(no - 1);
+        }
+      }
+
+      fact = factorial(no);
+
+      if (document.getElementById("num").value == "") {
+        document.getElementById("answer").value = " ";
+      }
+      else if (isNaN(document.getElementById("num").value)) {
+
+        document.getElementById("answer").value = "Enter a valid number";
+      }
+      else {
+        document.getElementById("answer").value = fact;
+      }
+
+    }
+  </script>
+  <header style="margin-bottom: 50px;">
+    <center>
+      <h1>Factorial of a natural number</h1>
+    </center>
+  </header>
+</head>
+
+<body>
+
+  <div class="box">
+    <div class="outerbox">
+      <div class="box1">
+        Enter Num:  <br> <input id="num"> <br>
+        <span style="display: inline-block;">Answer: <br> <input id="answer"></span>
+      </div>
+
+      <center><button style="margin-top: 30px;" onclick="show()">Factorial</button></center>
+    </div>
+    
+  </div>
+
+</body>
+
+</html>

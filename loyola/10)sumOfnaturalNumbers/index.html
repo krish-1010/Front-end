@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title> Sum of Natural Numbers</title>
+    <style>
+        body {
+            margin: 0;
+            
+        }
+
+        h1 {
+            margin: 0;
+            padding: 25px 0;
+            margin-bottom: 70px;
+        }
+
+        header {
+            font-family: sans-serif;
+            text-transform: uppercase;
+            text-align: center;
+            margin: 0;
+            border: 1px solid black;
+        }
+
+        .container {
+            width: 350px;
+            max-width: 500px;
+            margin: 0 auto;
+            border: 1px solid black;
+        }
+
+        .topbox {
+            border: 1px solid black;
+            text-transform: capitalize;
+            height: 50px;
+        }
+
+        .box {
+            border: 1px solid black;
+            height: 200px;
+            padding-top: 20px;
+            padding-bottom: 30px;
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+
+        .n {
+            margin-left: 5px;
+            text-align: center;
+            margin-right: 5px;
+            vertical-align: top;
+            margin-top: 15px;
+        }
+
+        .btn {
+            width: 70px;
+            margin-top: 20px;
+            margin-left: 65px;
+        }
+
+        label {
+            display: inline-block;
+            line-height: 1;
+            margin-top: 10px;
+            margin-left: 50px;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header> <h1> Sum of 'n' Natural Numbers </h1> </header>
+    <div class="container">
+        <div class="topbox">
+        </div>
+        <div class="box">
+            <label for="n">Enter the value of 'n' to<br> be summed from 1 to n</label>
+            <input type="text" id="n" name="n" size="5" class="n" placeholder="n">
+            <button class="btn" onclick="show()" style="background-color: white;"> sum </button>
+            <input type="text" id="result" size="12" 
+             style="margin-left: 15px; text-align: center;" placeholder="result">
+        </div>
+    </div>
+    <script>
+        function show(){
+            let sum = 0;
+            let n = document.getElementById("n").value;
+            for(i=0;i<=n;i++)
+            {
+                sum += i;
+            }
+            document.getElementById("result").value = sum;
+        }
+        
+    </script>
+</body>
+</html>

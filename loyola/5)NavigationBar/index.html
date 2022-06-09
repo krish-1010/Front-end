@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Navigation Bar</title>
+    <style>
+        body {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-weight: 300;
+            margin: 0;
+        }
+
+        .container {
+            width: 90%;
+            margin: 0 auto;
+        }
+
+        
+
+        header::after { /* (clearfix)clearing the float issues by adding a pseudo element after the content */
+            content: '';
+            display: table;
+            clear: both;
+        }
+
+        .logo {
+            float: left;
+            padding: 10px 0;
+        }
+
+        nav {
+            float: right;
+            border: 1px solid black;
+        }
+
+        nav ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            
+        }
+
+        nav ul li {
+            display: inline-block;
+            text-decoration: none;
+            margin-left: 70px;
+            padding-top: 25px;
+            padding-bottom: 25px;
+            position: relative; /**/
+        }
+
+        nav a {
+            
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: yellow;
+        }
+
+        /**/
+        nav a::after {
+            content: '';
+            display: block;
+            height: 5px;
+            
+            background-color: yellow;
+            position: absolute;
+            bottom: 0;
+
+            width: 0%; /*start invisible*/
+            transition: all ease-in-out 1000ms;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <img src="imgs/logo.jpg" height="52" width="400" alt="jpg" class="logo">
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#admission">Admission</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#schoolOfExcellence">School of excellence</a></li>
+                    <li><a href="#examination">Examinations</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>    
+</body>
+</html>
